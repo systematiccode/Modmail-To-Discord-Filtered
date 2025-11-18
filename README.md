@@ -12,9 +12,6 @@ App Identifier: modmailtodiscord
 | ------------------------------------------- |
 | ![Discord](https://i.imgur.com/yq5VX5o.png) |
 
-| Slack                                     |
-| ----------------------------------------- |
-| ![Slack](https://i.imgur.com/ZwJa805.png) |
 
 ## Setup Instructions
 
@@ -40,6 +37,14 @@ App Identifier: modmailtodiscord
 
 2. **Put The URL In Your App Settings** : After you have obtained the webhook URL, you'll need to put it in the app settings. App settings can be found at `https://developers.reddit.com/r/insert-your-subreddit-name-here/apps/modmailtodiscord/`. After putting the Webhook URL in the text-box - click on the Save Changes button.
 
+## Configuration
+
+The app allow you to configure filtering your modmail that is being sent to Discord/Slack
+
+1. **Body regex filter (optional)** - If added, bot will only forward messages that matches the Regex.
+2. **Block messages from banned users** - If enabled, banned user messages will not be forwarded
+3. **Include ban status in webhook message** - If enabled `Active` or as `Banned` will be sent
+
 ## Details
 
 The app sends all incoming and outgoing modmails from your subreddit's modmail to your Discord/Slack channel through webhooks. Here are the details the app currently sends (more to be added soon):
@@ -50,24 +55,23 @@ The app sends all incoming and outgoing modmails from your subreddit's modmail t
 4. **Body** - Sends the message body in Markdown
 5. **Participant** - The participant of the modmail conversation (most of the times it'll be the user, unless it's a mod discussion or a subreddit to subreddit conversation)
 6. **Participating As** - What the user is participating as, whether as `participant_user` or as `moderator`
+7. **Status** - What is the status of the user  `Active` or as `Banned`
 
 ## Changelog
 
-**Latest Version:**
+**Original App:**
 - Added a feature to which helps to differentiate between regular messages and private mod notes.
 - Added ignore-list which helps mods to ignore messages from certain users/mods.
 - Added discord role-ping feature.
 - Mod discussion syncing setting.
 - Fix Discord embed character limit issue.
-
-**Previous Versions:**
 - Add setting for app to ignore outgoing modmail messages by mods and not send them to the webhook 
 - Declutter Discord & Slack embed 
 - Add support for more Discord webhook URLs (Canary, PTB, etc.)
 
-## Contributions
+**This Fork:**
+- Filteration options as mentioned above.
 
-Feel free to contribute and improve this project. Pull requests and issues are always welcome.
 
 ## License
 
